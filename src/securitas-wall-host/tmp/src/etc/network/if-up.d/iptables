@@ -1,0 +1,3 @@
+#!/bin/sh
+iptables-restore < /etc/iptables.ipv4
+ip6tables-restore < /etc/iptables.ipv6
