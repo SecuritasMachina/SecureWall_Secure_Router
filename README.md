@@ -1,5 +1,8 @@
 # SecureWall Secure Router
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)
 
 Minimum System Requirements:
@@ -19,4 +22,31 @@ ClamAV AntiVirus & Malware Filtering
 
 
 
-# SecureWall_Secure_Router
+# Installation
+## Dependencies
+
+ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common
+    
+
+## Install gpg key
+curl -fsSL https://www.securitasmachina.com/gpg | sudo apt-key add -
+## Raspbian
+sudo add-apt-repository \
+   "deb [arch=armhf] https://updates.securitasmachina.com/repos/apt/raspbian \
+   $(lsb_release -cs) \
+   stable"
+## Debian
+sudo add-apt-repository \
+   "deb [arch=amd64] https://updates.securitasmachina.com/repos/apt/debian \
+   $(lsb_release -cs) \
+   stable"
+## Ubuntu
+sudo add-apt-repository \
+   "deb [arch=amd64] https://updates.securitasmachina.com/repos/apt/ubuntu \
+   $(lsb_release -cs) \
+   stable"
