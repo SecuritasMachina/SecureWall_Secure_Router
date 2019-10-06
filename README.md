@@ -1,6 +1,6 @@
 # SecureWall Secure Router
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/raw/images/german_shepherd.png "Open Source End Point Protection")
 
 
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)
@@ -19,8 +19,6 @@ Web filtering to prevent engagement with websites and social networking blogs.
 ### Web Protection
 Leveraging the vast, continuously-updated database of known malicious web sites, Secure Wall ensures you never connect to compromised, dangerous, or otherwise blacklisted sites.
 ClamAV AntiVirus & Malware Filtering
-
-
 
 # Installation
 ## Dependencies
