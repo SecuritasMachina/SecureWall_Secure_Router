@@ -1,6 +1,6 @@
 # SecureWall Secure Router
 
-![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/raw/images/german_shepherd.png "Open Source End Point Protection")
+![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/raw/master/images/german_shepherd.png  "Open Source End Point Protection")
 
 
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)
