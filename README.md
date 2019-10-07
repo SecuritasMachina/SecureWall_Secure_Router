@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/raw/master/images/german_shepherd.png  "Open Source End Point Protection")
 
-[Wiki](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
+[Wiki - Installation, donating etc.](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
 
 
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)
@@ -22,10 +22,3 @@ Web filtering to prevent engagement with websites and social networking blogs.
 * Leverages a vast, continuously-updated database of known malicious web sites, MalWare & RansomWare
 * Content inspection utilizing ClamAV AntiVirus 
 
-# Installation
-## RaspBerry Raspbian
-```bash
-wget https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/distrib/installSecureWall-raspbian.sh
-sudo chmod ug+x installSecureWall-raspbian.sh
-sudo ./installSecureWall-raspbian.sh
-```
