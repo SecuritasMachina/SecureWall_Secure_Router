@@ -6,7 +6,7 @@
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)
 
 Minimum System Requirements:
-- 2GB Memory
+- 2GB Memory, 4gb suggested
 - 16GB Disk Space
 - Bionic or Buster
 
@@ -21,30 +21,6 @@ Leveraging the vast, continuously-updated database of known malicious web sites,
 ClamAV AntiVirus & Malware Filtering
 
 # Installation
-## Dependencies
-
- sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg2 \
-    software-properties-common
-    
-
-## Install gpg key
-curl -fsSL https://www.securitasmachina.com/gpg | sudo apt-key add -
-## Raspbian
-sudo add-apt-repository \
-   "deb [arch=armhf] https://updates.securitasmachina.com/repos/apt/raspbian \
-   $(lsb_release -cs) \
-   stable"
-## Debian
-sudo add-apt-repository \
-   "deb [arch=amd64] https://updates.securitasmachina.com/repos/apt/debian \
-   $(lsb_release -cs) \
-   stable"
-## Ubuntu
-sudo add-apt-repository \
-   "deb [arch=amd64] https://updates.securitasmachina.com/repos/apt/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+```bash
+wget https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/distrib/installSecureWall-raspbian.sh;sudo chmod ug+x installSecureWall-raspbian.sh;sudo installSecureWall-raspbian.sh
+```
