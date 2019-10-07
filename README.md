@@ -17,8 +17,8 @@ Ad blocking and Ad filtering to remove online advertising in your web browser.
 Web filtering to prevent engagement with websites and social networking blogs.
 
 ### Web Protection
-⋅⋅* Leveraging a vast, continuously-updated database of known malicious web sites
-⋅⋅* ClamAV AntiVirus & Malware Filtering
+* Leveraging a vast, continuously-updated database of known malicious web sites
+* ClamAV AntiVirus & Malware Filtering
 
 # Installation
 ## RaspBerry Raspbian
