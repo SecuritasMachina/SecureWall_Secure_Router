@@ -25,5 +25,5 @@ ClamAV AntiVirus & Malware Filtering
 ```bash
 wget https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/distrib/installSecureWall-raspbian.sh
 sudo chmod ug+x installSecureWall-raspbian.sh
-sudo installSecureWall-raspbian.sh
+sudo ./installSecureWall-raspbian.sh
 ```
