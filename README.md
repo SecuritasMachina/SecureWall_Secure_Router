@@ -21,6 +21,9 @@ Leveraging the vast, continuously-updated database of known malicious web sites,
 ClamAV AntiVirus & Malware Filtering
 
 # Installation
+## RaspBerry Raspbian
 ```bash
-wget https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/distrib/installSecureWall-raspbian.sh;sudo chmod ug+x installSecureWall-raspbian.sh;sudo installSecureWall-raspbian.sh
+wget https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/distrib/installSecureWall-raspbian.sh
+sudo chmod ug+x installSecureWall-raspbian.sh
+sudo installSecureWall-raspbian.sh
 ```
