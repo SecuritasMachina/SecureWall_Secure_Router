@@ -4,7 +4,7 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: openjdk-11-jre-headless
-Maintainer: AckDev Inc. <help@ackdev.com>
+Maintainer: AckDev Inc. <support@ackdev.com>
 Description: Secure Wall Tomcat Administration
 
 

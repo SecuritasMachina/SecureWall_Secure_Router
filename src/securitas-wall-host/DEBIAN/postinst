@@ -122,7 +122,7 @@ chmod o+x /etc/cron.weekly/*
 chmod a+r /etc/issue
 
 #echo "Pull docker image"
-#docker pull ackdev/docker-headless-securitas-wall:latest --quiet
+#docker pull SecuritasMachina/docker-headless-securitas-wall:latest --quiet
 
 echo "TODO Restarting system"
 

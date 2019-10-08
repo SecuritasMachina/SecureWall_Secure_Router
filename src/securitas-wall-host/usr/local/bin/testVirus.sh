@@ -1,27 +1,27 @@
 export proxyServer=172.17.0.2
 
-echo "Test http://$proxyServer:3128 http://ackdev.com/"
-if curl -s --proxy http://$proxyServer:3128 http://ackdev.com/ | grep "Welcome.action"
+echo "Test http://$proxyServer:3128 http://securitasmachina.com/"
+if curl -s --proxy http://$proxyServer:3128 http://securitasmachina.com/ | grep "Welcome.action"
 then
-echo "Success http://ackdev.com/ !"
+echo "Success http://securitasmachina.com/ !"
 else
 echo "Fail !"
 fi
 
-echo "Test http://$proxyServer:3128 https://ackdev.com/"
-if curl -s --proxy http://$proxyServer:3128 https://ackdev.com/ | grep "Welcome.action"
+echo "Test http://$proxyServer:3128 https://securitasmachina.com/"
+if curl -s --proxy http://$proxyServer:3128 https://securitasmachina.com/ | grep "Welcome.action"
 then
-echo "Success https://ackdev.com/ !"
+echo "Success https://securitasmachina.com/ !"
 else
 echo "Fail !"
 fi
 
-echo "Test http://$proxyServer:8080 https://ackdev.com/"
-if curl -k -s --proxy http://$proxyServer:8080 https://ackdev.com/ | grep "Welcome.action"
+echo "Test http://$proxyServer:8080 https://securitasmachina.com/"
+if curl -k -s --proxy http://$proxyServer:8080 https://securitasmachina.com/ | grep "Welcome.action"
 then
-echo "Success! - http://$proxyServer:8080 https://ackdev.com/"
+echo "Success! - http://$proxyServer:8080 https://securitasmachina.com/"
 else
-echo "Fail! - http://$proxyServer:8080 https://ackdev.com/"
+echo "Fail! - http://$proxyServer:8080 https://securitasmachina.com/"
 fi
 
 echo "Test http://$proxyServer:3128 http://www.eicar.org/download/eicar.com"

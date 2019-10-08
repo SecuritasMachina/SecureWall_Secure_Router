@@ -1,1 +1,1 @@
-docker pull ackdev/docker-headless-securitas-wall
+docker pull SecuritasMachina/docker-headless-securitas-wall
