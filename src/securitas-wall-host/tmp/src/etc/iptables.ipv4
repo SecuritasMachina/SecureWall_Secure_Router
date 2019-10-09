@@ -4,8 +4,8 @@
 :INPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
--A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 443 -j REDIRECT --to-ports 18080
--A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 80 -j REDIRECT --to-ports 13128
+-A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 443 -j REDIRECT --to-ports 13443
+-A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 80 -j REDIRECT --to-ports 13080
 -A POSTROUTING -j MASQUERADE
 COMMIT
 # Completed on Sun Sep 29 05:45:54 2019
@@ -25,8 +25,8 @@ COMMIT
 :OUTPUT ACCEPT [0:0]
 -A INPUT -i lo -j ACCEPT
 -A INPUT -i br0 -j ACCEPT
--A INPUT -i wlan0 -p tcp -m tcp --dport 13128 -m state --state NEW,ESTABLISHED -j ACCEPT
--A INPUT -i wlan0 -p tcp -m tcp --dport 18080 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -i wlan0 -p tcp -m tcp --dport 13080 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -i wlan0 -p tcp -m tcp --dport 13443 -m state --state NEW,ESTABLISHED -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 -m physdev --physdev-in wlan0 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 -m physdev --physdev-in eth0 -j ACCEPT
 -A FORWARD -m state --state INVALID -j DROP
@@ -42,8 +42,8 @@ COMMIT
 :INPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
--A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 443 -j REDIRECT --to-ports 18080
--A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 80 -j REDIRECT --to-ports 13128
+-A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 443 -j REDIRECT --to-ports 13443
+-A PREROUTING -p tcp -m physdev --physdev-in wlan0 -m tcp --dport 80 -j REDIRECT --to-ports 13080
 -A POSTROUTING -j MASQUERADE
 COMMIT
 # Completed on Sun Sep 29 05:45:54 2019

@@ -30,12 +30,17 @@ echo "Add IPTables Modules"
 modprobe br_netfilter
 modprobe ip_conntrack
 
+
 #TODO Driver setup for Wintel & Realtek Chipset
 #cd /usr/src/rtl8812au-5.1.5
 #./dkms-install.sh
 
 echo "Copy base /etc files"
 cp -ru /tmp/src/etc/* /etc
+echo "Add iptables rules"
+iptables-restore < /etc/iptables.ipv4
+ip6tables-restore < /etc/iptables.ipv6
+
 echo "Setup WIFI Access Point"
 echo "Generate Random Access Point name"
 randomString=$(head /dev/urandom | tr -dc a-z0-9 | head -c 4 ; echo '')
