@@ -126,7 +126,8 @@ chmod ug+x /usr/local/sbin/*
 chmod o+x /etc/cron.weekly/*
 chmod a+r /etc/issue
 chown bind.bind /etc/bind/named.conf.options
-
+touch /var/log/querylog
+chown bind.bind /var/log/querylog
 #echo "Pull docker image"
 #docker pull SecuritasMachina/docker-headless-securitas-wall:latest --quiet
 
