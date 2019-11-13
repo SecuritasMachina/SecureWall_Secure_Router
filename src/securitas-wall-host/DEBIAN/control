@@ -1,8 +1,8 @@
 Package: securitas-wall-host
-Version: 1.0-4
+Version: 1.0-6
 Section: base
 Priority: optional
 Architecture: all
-Depends: hostapd, bridge-utils, dnsmasq,build-essential,bc, libelf-dev, raspberrypi-kernel-headers,dkms,net-tools, arpwatch
+Depends: hostapd, bridge-utils, bind9, build-essential,bc, libelf-dev, raspberrypi-kernel-headers,dkms,net-tools, arpwatch
 Maintainer: AckDev Inc. <support@ackdev.com>
 Description: Secure Wall Host support files

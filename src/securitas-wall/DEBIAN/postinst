@@ -64,6 +64,8 @@ if (( aMem < 1999000 )); then
 	rm -rf /var/lib/squidguard/db/blacklists/suspect/*
 	rm -rf /var/lib/squidguard/db/blacklists/warez/*
 fi
+echo "Generate squidguard databases"
+sudo -u proxy squidGuard -C all
 
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
