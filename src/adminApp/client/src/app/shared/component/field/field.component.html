@@ -1,0 +1,55 @@
+<mat-card [style.display]="showPage ? 'block' : 'none'"> <mat-card-title>
+Field: <span (mouseover)="previewHoverData(data)"
+	style="text-decoration: underline">{{data.name}}</span> </mat-card-title>
+<div class="form-container mat-elevation-z2">
+	<mat-form-field
+		hintLabel="Summary of contents: What is the field for? Who uses it?">
+	<textarea matInput [formControl]="description" #input
+		placeholder="Description"></textarea> </mat-form-field>
+	<mat-form-field
+		hintLabel="Little content descriptors to help group information">
+	<input matInput [formControl]="tags" #input placeholder="Tags">
+	</mat-form-field>
+			<mat-form-field
+		hintLabel="Source system of record that is the authoritative data source for a given data element or piece of information">
+	<input matInput [formControl]="sor" #input
+		placeholder="System of Record"> </mat-form-field>
+			<mat-form-field
+		hintLabel="A recognized or official data-production source which publishes reliable and accurate data for subsequent use by customers. An SOA may be the functional combination of multiple, separate data sources">
+	<input matInput [formControl]="soa" #input
+		placeholder="System of Authority"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure confidentiality are designed to prevent sensitive information from reaching the wrong people">
+	<input matInput [formControl]="confidentiality_control" #input
+		placeholder="Confidentiality Controls"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure consistency, accuracy, and trustworthiness of data over its entire life cycle">
+	<input matInput [formControl]="integrity_control" #input
+		placeholder="Integrity Controls"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure data is available to those who need is">
+	<input matInput [formControl]="availability_control" #input
+		placeholder="Availability Controls"> </mat-form-field>
+
+
+	<mat-spinner *ngIf="showScanSpinner" [diameter]="20"
+		ProgressSpinnerMode='indeterminate'> </mat-spinner>
+
+<mat-toolbar>
+	<button type="button" title="Save Field" data-toggle="tooltip"
+		data-placement="top" class="fas fa-save btn btn-primary mb-2"
+		(click)="save()"></button>
+		</mat-toolbar>
+	<!--        <button type="button" title="Soft Delete" data-toggle="tooltip" data-placement="top"
+                class="fa fa-trash btn btn-primary mb-2" [disabled]="isNotSaved" (click)="delete(field)">
+        </button> -->
+	Entered Date: {{data.enteredDate | date:'medium'}}<br /> Last Changed
+	Date: {{data.changedDate | date:'medium'}}<br /> Changed by:
+	{{data.changedBy}}<br /> Expiration Date: {{data.expirationDate |
+	date:'medium'}}<br />
+
+</div>
+</mat-card>

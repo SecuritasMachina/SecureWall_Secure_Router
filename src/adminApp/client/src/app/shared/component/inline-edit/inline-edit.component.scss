@@ -1,0 +1,27 @@
+@import '~@angular/material/theming';
+
+:host {
+  @include mat-elevation(2);
+  display: block;
+  background: #f9f9f9;
+  border-radius: 2px;
+  padding: 16px 24px 8px;
+  min-width: 240px;
+}
+
+.mat-subheading-2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.mat-form-field {
+  width: 100%;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  margin-right: -16px;
+}
