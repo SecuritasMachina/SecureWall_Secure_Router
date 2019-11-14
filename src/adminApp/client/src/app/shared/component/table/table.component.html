@@ -1,0 +1,26 @@
+<div class="form-container mat-elevation-z2" [style.display]="showPage ? 'block' : 'none'"> <mat-card-title>Table:
+{{table.name}}</mat-card-title>
+<div class="form-container">
+	<mat-form-field hintLabel="Enter a descriptive name">
+	<textarea matInput [formControl]="description" #input
+		placeholder="Description"></textarea> </mat-form-field>
+	<mat-form-field
+		hintLabel="Little content descriptors that help group information">
+	<input matInput [formControl]="tags" #input placeholder="Tags">
+	</mat-form-field>
+</div>
+<mat-spinner *ngIf="showScanSpinner"
+	[diameter]="20" ProgressSpinnerMode='indeterminate'> </mat-spinner>
+
+<mat-toolbar>
+	<button type="button" title="Save Table" data-toggle="tooltip"
+		data-placement="top" class="fas fa-save btn btn-primary mb-2"
+		(click)="save()"></button>
+</mat-toolbar>
+Entered Date: {{table.enteredDate | date:'medium'}}<br />
+Last Changed Date: {{table.changedDate | date:'medium'}}<br />
+Changed By: {{table.changedBy}}<br />
+Expiration Date: {{table.expirationDate | date:'medium'}}<br />
+Row Count at last scan: {{table.rowCount | number}}
+
+<app-field-list></app-field-list> </div>

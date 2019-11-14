@@ -1,0 +1,67 @@
+  <div class="form-container mat-elevation-z2" [style.display]="showPage ? 'block' : 'none'">
+  <mat-card-title>Table List</mat-card-title>
+    <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'"> 
+        				<button class="fas fa-edit btn btn-success" title="Edit Table"
+					data-toggle="tooltip" data-placement="top" (click)="edit(element.id)"
+					style="margin-left: 3px;"></button>
+				<button class="fas fa-book-open btn btn-success" title="List Fields"
+					data-toggle="tooltip" data-placement="top"
+					routerLink="fields/{{element.id}}" style="margin-left: 3px;"></button>
+         </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element" [satPopoverAnchorFor]="p" (click)="p.open()">
+          <ng-container *ngIf="element.description">
+            {{element.description}}
+          </ng-container>
+<!--           <span *ngIf="!element.description"> -->
+<!--             Add tag(s) -->
+<!--           </span> -->
+          <sat-popover #p
+              hasBackdrop
+              xAlign="start"
+              yAlign="start"
+              (closed)="update('description',element, $event)">
+            <inline-edit [value]="element.description"></inline-edit>
+          </sat-popover>
+        </mat-cell>
+      </ng-container>
+
+
+      <!-- tags Column -->
+      <ng-container matColumnDef="tags">
+        <mat-header-cell *matHeaderCellDef> Tags </mat-header-cell>
+        <mat-cell *matCellDef="let element" [satPopoverAnchorFor]="p" (click)="p.open()">
+          <ng-container *ngIf="element.tags">
+            {{element.tags}}
+          </ng-container>
+          <span *ngIf="!element.tags">
+            Add tag(s)
+          </span>
+          <sat-popover #p
+              hasBackdrop
+              xAlign="start"
+              yAlign="start"
+              (closed)="update('tags',element, $event)">
+            <inline-edit [value]="element.tags"></inline-edit>
+          </sat-popover>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+  </div>

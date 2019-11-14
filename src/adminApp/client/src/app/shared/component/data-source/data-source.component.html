@@ -1,0 +1,126 @@
+<div class="form-container mat-elevation-z1" [style.display]="showPage ? 'block' : 'none'"><mat-card-title>Data
+Source: {{dataSource.ds_name}}</mat-card-title> <mat-card [hidden]="!dataSource.error">
+<mat-card-title>Error occurred during scanning
+{{dataSource.ds_name}}, person(s) responsible for source should correct
+(DBA or developers) should correct:</mat-card-title> {{dataSource.error}}</mat-card> 
+
+<div
+	[hidden]="!dataSource.lastScanned">Last scanned:
+{{dataSource.lastScanned | date:'medium'}}</div>
+<form [formGroup]="ownerForm" class="form-container">
+	<mat-form-field hintLabel="Enter a description">
+	<input matInput formControlName="ds_name" maxlength="80"
+		placeholder="DataSource Name" required> <mat-hint align="end">{{input.value?.length
+	|| 0}}/80</mat-hint> <mat-error *ngIf="hasError('ds_name', 'required')">Name is Required</mat-error>
+	</mat-form-field>
+	<mat-form-field hintLabel="Summary of contents: What is the Database for? Who uses it?">
+	<textarea matInput formControlName="description" #input
+		placeholder="Description"></textarea> </mat-form-field>
+	<mat-form-field
+		hintLabel="Little content descriptors to help group information">
+	<input matInput formControlName="tags" #input placeholder="Tags">
+	</mat-form-field>
+
+	<mat-form-field hintLabel="Owning Line of Business"> <input
+		matInput formControlName="lob" #input placeholder="LOB"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Defines and provides
+			information about the rightful owner of data assets and the
+			acquisition, use and distribution policy implemented">
+	<input matInput formControlName="informationOwner" #input
+		placeholder="Information Owner"> </mat-form-field>
+	<mat-form-field
+		hintLabel="Database
+			Administration contact person or group">
+	<input matInput formControlName="responsibleDBA" #input
+		placeholder="Responsible DBA"> </mat-form-field>
+			<mat-form-field
+		hintLabel="Source system of record that is the authoritative data source for a given data element or piece of information">
+	<input matInput formControlName="sor" #input
+		placeholder="System of Record"> </mat-form-field>
+			<mat-form-field
+		hintLabel="A recognized or official data-production source which publishes reliable and accurate data for subsequent use by customers. An SOA may be the functional combination of multiple, separate data sources">
+	<input matInput formControlName="soa" #input
+		placeholder="System of Authority"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure confidentiality are designed to prevent sensitive information from reaching the wrong people">
+	<input matInput formControlName="confidentiality_control" #input
+		placeholder="Confidentiality Controls"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure consistency, accuracy, and trustworthiness of data over its entire life cycle">
+	<input matInput formControlName="integrity_control" #input
+		placeholder="Integrity Controls"> </mat-form-field>
+
+	<mat-form-field
+		hintLabel="Measures undertaken to ensure data is available to those who need is">
+	<input matInput formControlName="availability_control" #input
+		placeholder="Availability Controls"> </mat-form-field>
+		
+
+<hr/>
+<mat-card-title>Data Source
+	Configuration</mat-card-title> <mat-form-field
+		hintLabel="The connection string contains the information that the provider need to know to be able to establish a connection to the database or the data file.">
+	<input matInput formControlName="dsn" #input
+		placeholder="Connection String" required> <mat-error
+		*ngIf="hasError('dsn', 'required')">Connection string is required</mat-error> </mat-form-field> <mat-form-field
+		hintLabel="User Name"> <input matInput
+		formControlName="username" #input
+		placeholder="Database/schema user name"> </mat-form-field> <mat-form-field
+		hintLabel="Password"> <input matInput
+		formControlName="password" #input placeholder="Database/schema password">
+	</mat-form-field>
+	 <mat-form-field
+		hintLabel="ex. com.mysql.cj.jdbc.Driver">
+		<input matInput formControlName="driver" #input
+		placeholder="Java Database Driver" required> <mat-error
+		*ngIf="hasError('driver', 'required')">Driver class package and name is required</mat-error> </mat-form-field>
+	</form>
+<!-- 	 <mat-form-field -->
+<!-- 		hintLabel="Or enter -->
+<!-- 				one below ex. com.mysql.cj.jdbc.Driver"> -->
+<!-- 	<mat-label>Select Database Driver</mat-label> <mat-select [compareWith]="compareIds" -->
+<!-- 		[(value)]="selected"> <mat-option -->
+<!-- 		value="oracle.jdbc.driver.OracleDriver">Oracle Driver</mat-option> <mat-option -->
+<!-- 		value="com.ibm.db2.jdbc.net.DB2Driver">DB2 Driver</mat-option> <mat-option -->
+<!-- 		value="com.microsoft.sqlserver.jdbc.SQLServerDriver">Microsoft -->
+<!-- 	SQL Server Driver</mat-option> <mat-option value="org.mariadb.jdbc.Driver">MariaDB -->
+<!-- 	Driver</mat-option> <mat-option value="com.mysql.cj.jdbc.Driver">MySql -->
+<!-- 	Driver</mat-option> <mat-option value="net.sourceforge.jtds.jdbc.Driver">TDS -->
+<!-- 	Microsoft Driver</mat-option> <mat-option value="org.postgresql.Driver">Postgres -->
+<!-- 	Driver</mat-option> <mat-option value="com.informix.jdbc.IfxDriver">Informix -->
+<!-- 	Driver</mat-option> <mat-option value="org.apache.derby.jdbc.EmbeddedDriver">Derby -->
+<!-- 	Driver</mat-option> </mat-select> </mat-form-field>  -->
+	<mat-spinner *ngIf="showScanSpinner" [diameter]="20"
+		ProgressSpinnerMode='indeterminate'> </mat-spinner>
+
+	<mat-toolbar>
+
+	<button type="button" title="Save Data Source" data-toggle="tooltip"
+		data-placement="top" class="fas fa-save btn btn-primary mb-2"
+		(click)="save()"></button>
+	&nbsp;
+	<button type="button" title="Scan" data-toggle="tooltip"
+		data-placement="top" class="fa fa-vial btn btn-primary mb-2"
+		[disabled]="isNotSaved" (click)="scan(dataSource)"></button>
+	&nbsp; <!--      <button type="button" title="Clone" data-toggle="tooltip" data-placement="top"
+                      class="fa fa-copy btn btn-primary mb-2" [disabled]="isNotSaved"
+              >
+              </button>&nbsp;-->
+
+	<button type="button" title="Soft Delete" data-toggle="tooltip"
+		data-placement="top" class="fa fa-trash btn btn-primary mb-2"
+		[disabled]="isNotSaved" (click)="delete(dataSource)"></button>
+	</mat-toolbar>
+	Entered Date: {{dataSource.enteredDate | date:'medium'}}<br /> Last
+	Changed Date: {{dataSource.changedDate | date:'medium'}}<br /> Changed
+	By: {{dataSource.changedBy}}<br /> Expiration Date:
+	{{dataSource.expirationDate | date:'medium'}}<br />
+	<a routerLink="ds_fields/{{dataSource.id}}" routerLinkActive="active">Show
+	All Fields</a>
+	<app-table-list></app-table-list>
+</div>
+ 
