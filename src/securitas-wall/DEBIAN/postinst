@@ -82,8 +82,9 @@ libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
 
 echo "Apply permissions"
-chown -R proxy.proxy /var/ssl_db
-chown -R proxy.proxy /etc/squid/ssl_cert
+chown -R proxy:proxy /var/ssl_db
+chown -R proxy:proxy /var/lib/squid
+chown -R proxy:proxy /etc/squid/ssl_cert
 chmod go+rw /var/ssl_db/*
 chmod go+rw /etc/squid/ssl_cert/*
 chmod go+rw /var/log/squid/*
