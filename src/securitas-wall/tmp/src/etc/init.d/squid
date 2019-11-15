@@ -98,8 +98,8 @@ start () {
 	umask 027
 	ulimit -n 65535
 	cd $run_dir
-	log_daemon_msg "generating squidGuard DBs"
-	sudo -u proxy squidGuard -C all
+	#log_daemon_msg "generating squidGuard DBs"
+	#sudo -u proxy squidGuard -C all
 	log_daemon_msg "Starting Squid"
 	start-stop-daemon --quiet --start \
 		--pidfile $PIDFILE \
