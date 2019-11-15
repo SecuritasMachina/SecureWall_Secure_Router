@@ -1,1 +1,1 @@
-rsync -ar /mnt/ramdisk /mnt/persist_ramdisk
+rsync -ar /mnt/ramdisk/* /mnt/persist_ramdisk
