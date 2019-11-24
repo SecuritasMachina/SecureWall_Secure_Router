@@ -49,6 +49,8 @@ echo "Echo reduce swapping"
 sysctl vm.swappiness=20
 
 cp -r /tmp/src/etc/* /etc
+cp -r /tmp/src/var/* /var
+
 aMem=$(free | awk '/^Mem:/{print $2}')
 if (( aMem < 1999000 )); then
 	echo "Less than 2GB memory on device, reducing squid guard checks"
