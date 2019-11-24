@@ -35,14 +35,15 @@ modprobe ip_conntrack
 #cd /usr/src/rtl8812au-5.1.5
 #./dkms-install.sh
 
-echo "Copy base /etc files"
-cp -ru /tmp/src/etc/* /etc
+echo "Copy template files"
+cp -ru /tmp/src/* /
+
 echo "Add iptables rules"
 iptables-restore < /etc/iptables.ipv4
 ip6tables-restore < /etc/iptables.ipv6
 
 echo "Setup WIFI Access Point"
-if cat /etc/hostapd/hostapd.conf | grep "wifi_random_added" ; then
+if cat /etc/hostapd/hostapd.conf | grep "#wifi_random_added" ; then
 	echo "Access Point name already generated - skipping"
 else
 	echo "Generate Random Access Point name"
@@ -56,22 +57,16 @@ fi
 
 
 echo "Disable dhcpcd for bridge"
-#Disabled as this broke ipv6 routing:
-#if cat /etc/dhcpcd.conf | grep "denyinterfaces br0" ; then
-#     echo "denyinterfaces br0 already exists"
-#else
-#	echo "Adding denyinterfaces wlan0"
-#	echo "denyinterfaces br0" >> /etc/dhcpcd.conf
-#fi
+
 if cat /etc/dhcpcd.conf | grep "denyinterfaces wlan0" ; then
-     echo "denyinterfaces wlan0 already exists"
+     echo "denyinterfaces wlan0 already exists - step skipped"
 else
 	echo "Adding denyinterfaces wlan0"
 	echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
 fi
 
 if cat /etc/dhcpcd.conf | grep "denyinterfaces eth0" ; then
-     echo "denyinterfaces eth0 already exists"
+     echo "denyinterfaces eth0 already exists - step skipped"
 else
 	echo "Adding denyinterfaces eth0"
 	echo "denyinterfaces eth0" >> /etc/dhcpcd.conf
@@ -86,7 +81,7 @@ update-rc.d hostapd defaults
 
 echo "Setup ip forwarding"
 if cat /proc/sys/net/ipv4/ip_forward | grep "1" ; then
-     echo "IP Forwarding already enabled"
+     echo "IP Forwarding already enabled - step skipped"
 else
 	echo "Enable packet forwarding for IPv4"
 	echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
@@ -113,13 +108,6 @@ echo "Restart networking"
 
 echo "Check filesystem on each boot"
 tune2fs -c 1 /dev/mmcblk0p2
-
-#autofix instructions:
-#sudo nano /etc/default/grub
-#find the line that says GRUB_CMDLINE_LINUX_DEFAULT add fsck.mode=force  fsck.repair=yes
-#to the existing things there.
-#GRUB_CMDLINE_LINUX_DEFAULT="quiet fsck.mode=force  fsck.repair=yes"
-#sudo update-grub
 
 echo "Update root certificates"
 update-ca-certificates
