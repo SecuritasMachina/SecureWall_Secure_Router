@@ -6,6 +6,7 @@ wget -q -O /var/lib/squid/bumpdomains.lst https://github.com/SecuritasMachina/Se
 echo "Extracting"
 tar -xzf /tmp/mesd_blacklists.tgz -C /var/lib/squidguard/db
 tar -xzf /tmp/securitasmachina.tgz -C /var/lib/squidguard/db/blacklists
+wget -O /var/lib/squidguard/db/blacklists/trackers/urls https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/urls
 
 chown -R proxy:proxy /var/lib/squidguard/db/*
 
