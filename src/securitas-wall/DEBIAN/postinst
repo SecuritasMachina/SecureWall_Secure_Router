@@ -48,8 +48,7 @@ service ssh restart
 echo "Echo reduce swapping"
 sysctl vm.swappiness=20
 
-cp -r /tmp/src/etc/* /etc
-cp -r /tmp/src/var/* /var
+cp -r /tmp/src/* /
 
 aMem=$(free | awk '/^Mem:/{print $2}')
 if (( aMem < 1999000 )); then
