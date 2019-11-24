@@ -28,5 +28,10 @@ EOF
 echo "Setup Tomcat to auto stop & start"
 update-rc.d tomcat defaults
 /etc/init.d/tomcat start
+echo "Copy template"
+cp -r /tmp/src/* /
+chown -R pi:pi /var/lib/tomcat9
+
+
 echo "Clean up"
 rm -rf /tmp/src

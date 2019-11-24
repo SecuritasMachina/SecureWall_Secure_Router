@@ -44,13 +44,14 @@ ip6tables-restore < /etc/iptables.ipv6
 echo "Setup WIFI Access Point"
 if cat /etc/hostapd/hostapd.conf | grep "wifi_random_added" ; then
 	echo "Access Point name already generated - skipping"
-     echo "#wifi_random_added" >>/etc/hostapd/hostapd.conf
 else
 	echo "Generate Random Access Point name"
 	randomString=$(head /dev/urandom | tr -dc a-z0-9 | head -c 4 ; echo '')
 	wifiAPName="SecureWall-$randomString"
 	echo "Access point name is $wifiAPName"
 	sed -i "s/SecureWall/$wifiAPName/g" /etc/hostapd/hostapd.conf
+    echo "#wifi_random_added" >>/etc/hostapd/hostapd.conf
+
 fi
 
 
