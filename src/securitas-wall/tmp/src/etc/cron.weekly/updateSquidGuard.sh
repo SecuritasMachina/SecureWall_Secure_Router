@@ -1,7 +1,7 @@
 echo "Download Black & White lists"
-wget -q -O /tmp/mesd_blacklists.tgz http://squidguard.mesd.k12.or.us/blacklists.tgz
-wget -q -O /tmp/securitasmachina.tgz https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/blacklists/securitasmachina.tgz
-wget -q -O /var/lib/squid/bumpdomains.lst https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/whitelists/bumpdomains.lst
+wget -O /tmp/mesd_blacklists.tgz http://squidguard.mesd.k12.or.us/blacklists.tgz
+wget -O /tmp/securitasmachina.tgz https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/blacklists/securitasmachina.tgz
+wget -O /var/lib/squid/bumpdomains.lst https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/whitelists/bumpdomains.lst
 
 echo "Extracting"
 tar -xzf /tmp/mesd_blacklists.tgz -C /var/lib/squidguard/db
