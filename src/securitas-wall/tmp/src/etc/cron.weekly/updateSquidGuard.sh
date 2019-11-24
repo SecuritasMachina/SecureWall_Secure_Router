@@ -8,6 +8,7 @@ tar -xzf /tmp/mesd_blacklists.tgz -C /var/lib/squidguard/db
 tar -xzf /tmp/securitasmachina.tgz -C /var/lib/squidguard/db/blacklists
 wget -O /var/lib/squidguard/db/blacklists/trackers/urls https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/urls
 wget -O /var/lib/squidguard/db/blacklists/trackers/domains https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/domains
+wget -O /var/lib/squidguard/db/blacklists/trackers/expressions https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/expressions
 
 chown -R proxy:proxy /var/lib/squidguard/db/*
 
