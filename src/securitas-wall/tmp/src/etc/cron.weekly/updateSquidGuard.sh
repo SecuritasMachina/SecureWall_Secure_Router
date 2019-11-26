@@ -14,9 +14,9 @@ mkdir -p /var/lib/squidguard/db/blacklists/trackers2
 wget -O /var/lib/squidguard/db/blacklists/trackers/urls https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/urls
 wget -O /var/lib/squidguard/db/blacklists/trackers/domains https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/domains
 wget -O /var/lib/squidguard/db/blacklists/trackers/expressions https://raw.githubusercontent.com/SecuritasMachina/SecuritasMachina-Distrib/master/sources/blackLists/squidguard/trackers/expressions
-wget -o /var/lib/squidguard/db/blacklists/trackers2/urls https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/urls
-wget -o /var/lib/squidguard/db/blacklists/trackers2/domains https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/domains
-wget -o /var/lib/squidguard/db/blacklists/trackers2/expressions https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/expressions 
+wget -O /var/lib/squidguard/db/blacklists/trackers2/urls https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/urls
+wget -O /var/lib/squidguard/db/blacklists/trackers2/domains https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/domains
+wget -O /var/lib/squidguard/db/blacklists/trackers2/expressions https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/publicite/expressions 
 
 chown -R proxy:proxy /var/lib/squidguard/db/*
 
