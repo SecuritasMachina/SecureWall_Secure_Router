@@ -86,6 +86,9 @@ libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
 
 echo "Apply permissions"
+chmod o+x /etc/cron.hourly/*
+chmod o+x /etc/cron.daily/*
+chmod o+x /etc/cron.weekly/*
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
