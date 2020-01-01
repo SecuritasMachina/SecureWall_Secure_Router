@@ -119,6 +119,8 @@ echo "Tighten security"
 chmod a+x /usr/local/bin/*
 chmod ug+x /usr/local/sbin/*
 chmod o+x /etc/cron.weekly/*
+chmod o+x /etc/cron.daily/*
+chmod o+x /etc/cron.hourly/*
 chmod a+r /etc/issue
 chmod a+x /etc/cron.hourly/syncRamDisk.sh
 chown bind.bind /etc/bind/named.conf.options
