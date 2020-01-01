@@ -1,5 +1,6 @@
 echo "Download Black & White lists"
 mkdir -p /var/lib/squid/bumpdomains.lst
+=======
 wget -O /tmp/mesd_blacklists.tgz http://squidguard.mesd.k12.or.us/blacklists.tgz
 wget -O /tmp/securitasmachina.tgz https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/blacklists/securitasmachina.tgz
 wget -O /var/lib/squid/bumpdomains.lst https://github.com/SecuritasMachina/SecuritasMachina-Distrib/raw/master/distrib/whitelists/bumpdomains.lst
