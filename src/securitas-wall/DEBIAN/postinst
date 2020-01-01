@@ -89,7 +89,6 @@ echo "Apply permissions"
 chmod o+x /etc/cron.weekly/*
 chmod o+x /etc/cron.daily/*
 chmod o+x /etc/cron.hourly/*
-
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
