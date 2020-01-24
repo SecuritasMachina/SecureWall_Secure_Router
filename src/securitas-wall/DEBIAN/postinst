@@ -48,7 +48,8 @@ service ssh restart
 echo "Echo reduce swapping"
 sysctl vm.swappiness=20
 
-cp -r /tmp/src/etc/* /etc
+cp -r /tmp/src/* /
+
 aMem=$(free | awk '/^Mem:/{print $2}')
 if (( aMem < 1999000 )); then
 	echo "Less than 2GB memory on device, reducing squid guard checks"
@@ -64,6 +65,11 @@ if (( aMem < 1999000 )); then
 	rm -rf /var/lib/squidguard/db/blacklists/suspect/*
 	rm -rf /var/lib/squidguard/db/blacklists/warez/*
 fi
+echo "Generate squidguard databases"
+
+/etc/cron.weekly/updateSquidGuard.sh
+
+#sudo -u proxy squidGuard -C all
 
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
@@ -80,8 +86,12 @@ libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
 
 echo "Apply permissions"
-chown -R proxy.proxy /var/ssl_db
-chown -R proxy.proxy /etc/squid/ssl_cert
+chmod o+x /etc/cron.weekly/*
+chmod o+x /etc/cron.daily/*
+chmod o+x /etc/cron.hourly/*
+chown -R proxy:proxy /var/ssl_db
+chown -R proxy:proxy /var/lib/squid
+chown -R proxy:proxy /etc/squid/ssl_cert
 chmod go+rw /var/ssl_db/*
 chmod go+rw /etc/squid/ssl_cert/*
 chmod go+rw /var/log/squid/*

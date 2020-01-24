@@ -1,8 +1,8 @@
 Package: securitas-wall
-Version: 1.0-2
+Version: 1.0-10
 Section: base
 Priority: optional
 Architecture: all
 Depends: clamav (>= 0.100.3),squidguard, c-icap (>= 1.0.5), libicapapi-dev, openssh-server, libssl-dev
 Maintainer: AckDev Inc. <support@ackdev.com>
-Description: Secure Wall Transparent SSL Proxy Server
+Description: SecureWall WiFi Router - Transparent SSL Proxy Server

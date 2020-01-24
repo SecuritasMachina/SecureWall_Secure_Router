@@ -1,8 +1,10 @@
-# SecureWall Secure Router
+# Secure WiFi Router, Prevents MalWare, Viruses & RansomWare from touching your devices
+
+# [Wiki - Installation](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
+
 
 ![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/raw/master/images/german_shepherd.png  "Open Source End Point Protection")
 
-[Wiki - Installation, donating etc.](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
 
 
 ## Debian &amp; Raspberry Raspbian Secure Router (Bridge with Transparent Proxy)

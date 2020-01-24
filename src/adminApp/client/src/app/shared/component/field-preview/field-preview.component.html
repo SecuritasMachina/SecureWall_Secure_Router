@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Data Preview for {{data.lookup.name}}</h1>
+
+<div mat-dialog-content>
+	<mat-list> <mat-list-item
+		*ngFor="let field of pData; let id = index">{{field.value}}
+	</mat-list-item> </mat-list>
+</div>
+<mat-dialog-actions align="end">
+<button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

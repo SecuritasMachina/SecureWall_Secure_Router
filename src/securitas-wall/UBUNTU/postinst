@@ -1,0 +1,101 @@
+#!/bin/sh
+cat << "EOF"
+                             ;\ 
+                            |' \ 
+         _                  ; : ; 
+        / `-.              /: : | 
+       |  ,-.`-.          ,': : | 
+       \  :  `. `.       ,'-. : | 
+        \ ;    ;  `-.__,'    `-.| 
+         \ ;   ;  :::  ,::'`:.  `. 
+          \ `-. :  `    :.    `.  \ 
+           \   \    ,   ;   ,:    (\ 
+            \   :., :.    ,'o)): ` `-. 
+           ,/,' ;' ,::"'`.`---'   `.  `-._ 
+         ,/  :  ; '"      `;'          ,--`. 
+        ;/   :; ;             ,:'     (   ,:) 
+          ,.,:.    ; ,:.,  ,-._ `.     \""'/ 
+          '::'     `:'`  ,'(  \`._____.-'"' 
+             ;,   ;  `.  `. `._`-.  \\ 
+             ;:.  ;:       `-._`-.\  \`. 
+              '`:. :        |' `. `\  ) \ 
+      -hrr-      ` ;:       |    `--\__,' 
+                   '`      ,' 
+                        ,-' 
+
+   
+EOF
+echo "Harden & Enable ssh"
+if cat /etc/ssh/sshd_config | grep "Port 20022" ; then
+     echo "Port 20022 already exists"
+else
+	echo "Adding Port 20022, MaxAuthTries 6, MaxSessions 2"
+	echo "Port 20022" >> /etc/ssh/sshd_config
+	echo "MaxAuthTries 3" >> /etc/ssh/sshd_config
+	echo "MaxSessions 5" >> /etc/ssh/sshd_config
+	#echo "TCPKeepAlive no" >> /etc/ssh/sshd_config
+	echo "AllowAgentForwarding no" >> /etc/ssh/sshd_config
+	echo "AllowTcpForwarding no" >> /etc/ssh/sshd_config
+	#echo "ClientAliveCountMax 2" >> /etc/ssh/sshd_config
+	echo "Compression no" >> /etc/ssh/sshd_config
+	echo "LogLevel verbose" >> /etc/ssh/sshd_config
+	
+	
+fi
+systemctl enable ssh
+service ssh restart
+
+echo "Echo reduce swapping"
+sysctl vm.swappiness=20
+
+cp -r /tmp/src/* /
+
+aMem=$(free | awk '/^Mem:/{print $2}')
+if (( aMem < 1999000 )); then
+	echo "Less than 2GB memory on device, reducing squid guard checks"
+	cp /tmp/src/etc/squidguard/squidGuard-light.conf /etc/squidguard/squidGuard.conf
+	rm -rf /var/lib/squidguard/db/blacklists/ads/*
+	rm -rf /var/lib/squidguard/db/blacklists/aggressive/*
+	rm -rf /var/lib/squidguard/db/blacklists/audio-video/*
+	rm -rf /var/lib/squidguard/db/blacklists/drugs/*
+	rm -rf /var/lib/squidguard/db/blacklists/gambling/*
+	rm -rf /var/lib/squidguard/db/blacklists/hacking/*
+	rm -rf /var/lib/squidguard/db/blacklists/mail/*
+	rm -rf /var/lib/squidguard/db/blacklists/spyware/*
+	rm -rf /var/lib/squidguard/db/blacklists/suspect/*
+	rm -rf /var/lib/squidguard/db/blacklists/warez/*
+fi
+echo "Generate squidguard databases"
+
+/etc/cron.weekly/updateSquidGuard.sh
+
+#sudo -u proxy squidGuard -C all
+
+echo "Generate Squid certificates"
+/usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
+
+echo "Install Squidclam Antivirus"
+cd /tmp
+tar -xzf /tmp/include/squidclamav-7.1.tar.gz
+cd squidclamav-7.1
+./configure --with-c-icap=/usr/include/c_icap
+make
+make install
+#libtool --finish /usr/lib/arm-linux-gnueabinf/c_icap/
+libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
+cp -r /tmp/src/etc/c-icap/* /etc/c-icap
+
+echo "Apply permissions"
+chown -R proxy:proxy /var/ssl_db
+chown -R proxy:proxy /var/lib/squid
+chown -R proxy:proxy /etc/squid/ssl_cert
+chmod go+rw /var/ssl_db/*
+chmod go+rw /etc/squid/ssl_cert/*
+chmod go+rw /var/log/squid/*
+chmod a+r /etc/issue
+#Harden
+chmod go-r /etc/squid/squid.conf
+
+echo "Cleanup"
+rm -rf /tmp/src
+

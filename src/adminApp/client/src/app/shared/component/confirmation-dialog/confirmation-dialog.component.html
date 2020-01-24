@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Action Confirmation</h1>
+<div mat-dialog-content>
+		<p>Confirm Deletion of {{data.name}}</p>
+</div>
+<div mat-dialog-actions>
+		<button mat-button (click)="onNoClick()" cdkFocusInitial>Cancel</button>
+		<button mat-button (click)="onOkayClick()" >Okay</button>
+</div>
