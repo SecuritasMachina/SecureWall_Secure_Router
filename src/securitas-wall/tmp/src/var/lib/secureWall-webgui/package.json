@@ -1,0 +1,49 @@
+{
+    "title": "RaspAP WiFi Configuration Portal",
+    "name": "raspap-webgui",
+    "version": "2.1",
+    "scripts": {
+        "start": "node_modules/.bin/gulp watch"
+    },
+    "description": "A simple, responsive web interface to control wifi and hostapd on the Raspberry Pi",
+    "keywords": [
+        "raspberry-pi",
+        "hostapd",
+        "raspap",
+        "wifi",
+        "lighttpd",
+        "dnsmasq",
+        "admin",
+        "app"
+    ],
+    "homepage": "https://github.com/billz/raspap-webgui",
+    "bugs": {
+        "url": "https://github.com/billz/raspap-webgui/issues"
+    },
+    "license": "MIT",
+    "author": "RaspAP Developers",
+    "contributors": [
+        "Bill Zimmerman (https://github.com/billz)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/billz/raspap-webgui.git"
+    },
+    "dependencies": {
+	"bootstrap4-toggle": "3.5.0",
+	"startbootstrap-sb-admin-2": "4.0.7"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-header": "^2.0.9",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-uglify": "^3.0.2",
+        "merge-stream": "^2.0.0"
+    }
+}

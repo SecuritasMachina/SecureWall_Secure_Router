@@ -3,6 +3,6 @@ Version: 1.0-9
 Section: base
 Priority: optional
 Architecture: all
-Depends: clamav (>= 0.100.3),squidguard, c-icap (>= 1.0.5), libicapapi-dev, openssh-server, libssl-dev
+Depends: clamav (>= 0.100.3), squidguard, c-icap (>= 1.0.5), libicapapi-dev, openssh-server, libssl-dev, lighttpd, php-cgi php-mcrypt php-cli php-mysql php-gd php-imagick php-recode php-tidy php-xmlrpc libterm-readline-gnu-perl
 Maintainer: AckDev Inc. <support@ackdev.com>
 Description: SecureWall WiFi Router - Transparent SSL Proxy Server

@@ -84,7 +84,11 @@ make install
 #libtool --finish /usr/lib/arm-linux-gnueabinf/c_icap/
 libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
-
+echo "Configure lighttpd"
+lighttpd-enable-mod fastcgi
+lighttpd-enable-mod fastcgi-php
+service lighttpd restart
+ 
 echo "Apply permissions"
 chmod o+x /etc/cron.weekly/*
 chmod o+x /etc/cron.daily/*
