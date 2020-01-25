@@ -4,18 +4,16 @@
  * Raspbian WiFi Configuration Portal
  *
  * Enables use of simple web interface rather than SSH to control wifi and hostapd on the Raspberry Pi.
- * Recommended distribution is Raspbian Buster Lite. Specific instructions to install the supported software are
- * in the README and original post by @SirLagz. For a quick run through, the packages required for the WebGUI are:
  * lighttpd (I have version 1.4.53 installed via apt)
  * php-cgi (I have version 7.1.20-1+b2  installed via apt)
  * along with their supporting packages, php7.1 will also need to be enabled.
  *
  * @author     Lawrence Yau <sirlagz@gmail.com>
  * @author     Bill Zimmerman <billzimmerman@gmail.com>
+ * @author     Charles H <charles@ackdev.com>
  * @license    GNU General Public License, version 3 (GPL-3.0)
- * @version    2.1
- * @link       https://github.com/billz/raspap-webgui
- * @see        http://sirlagz.net/2013/02/08/raspap-webgui/
+ * @version    1.0
+ * @link       https://github.com/SecuritasMachina/SecureWall_Secure_Router
  */
 
 require('includes/csrf.php');
@@ -27,7 +25,7 @@ include_once(RASPI_CONFIG.'/raspap.php');
 include_once('includes/locale.php');
 include_once('includes/functions.php');
 include_once('includes/dashboard.php');
-include_once('includes/authenticate.php');
+#include_once('includes/authenticate.php');
 include_once('includes/admin.php');
 include_once('includes/dhcp.php');
 include_once('includes/hostapd.php');
@@ -169,7 +167,7 @@ if ($_COOKIE['sidebarToggled'] == 'true' ) {
     </li>
       <?php endif; ?>
 	 <li class="nav-item">
-	  <a class="nav-link" href="index.php?page=about"><i class="fas fa-info-circle fa-fw mr-2"></i><span class="nav-label"><?php echo _("About RaspAP"); ?></a>
+	  <a class="nav-link" href="index.php?page=about"><i class="fas fa-info-circle fa-fw mr-2"></i><span class="nav-label"><?php echo _("About SecureWall"); ?></a>
 	</li>
   <!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block">
