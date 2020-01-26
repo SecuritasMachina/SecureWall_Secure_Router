@@ -62,7 +62,7 @@ if ($_COOKIE['sidebarToggled'] == 'true' ) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo _("RaspAP WiFi Configuration Portal"); ?></title>
+    <title><?php echo _("SecureWall Configuration Portal"); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="dist/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -109,7 +109,7 @@ if ($_COOKIE['sidebarToggled'] == 'true' ) {
           <div class="sidebar-brand-icon">
             <img src="app/img/raspAP-logo64px.png" width="32" height="32">
           </div>
-	  <div class="sidebar-brand-text ml-1">RaspAP</div>
+	  <div class="sidebar-brand-text ml-1">SecureWall</div>
 	</a>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -290,7 +290,7 @@ if ($_COOKIE['sidebarToggled'] == 'true' ) {
     <!-- SB-Admin-2 JavaScript -->
     <script src="dist/sb-admin-2/js/sb-admin-2.js"></script>
 
-    <!-- Custom RaspAP JS -->
+    <!-- Custom SecureWall JS -->
     <script src="app/js/custom.js"></script>
 
     <?php if ($page == "wlan0_info" || !isset($page)) { ?>

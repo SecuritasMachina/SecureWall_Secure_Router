@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
+# SecureWall Portable Object file
 # Project home: https://github.com/billz/raspap-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 #
 msgid ""
@@ -19,14 +19,14 @@ msgstr ""
 "X-Generator: Poedit 1.8.8\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "RaspAP Wi-Fi configuratie portaal"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "SecureWall Wi-Fi configuratie portaal"
 
 msgid "Toggle navigation"
 msgstr "Toon navigatie"
 
-msgid "RaspAP Wifi Portal"
-msgstr "RaspAP Wi-fi portaal"
+msgid "SecureWall Wifi Portal"
+msgstr "SecureWall Wi-fi portaal"
 
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -58,8 +58,8 @@ msgstr "Verander thema"
 msgid "System"
 msgstr "Systeem"
 
-msgid "About RaspAP"
-msgstr "Over RaspAP"
+msgid "About SecureWall"
+msgstr "Over SecureWall"
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -141,8 +141,8 @@ msgstr "Verbergen"
 msgid "Not configured"
 msgstr "Niet ingesteld"
 
-msgid "<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not currently support connecting to WEP"
-msgstr "<strong>Opmerking</strong> WEP beveiligde toegangspunten worden als 'Open' getoond. RaspAP heeft geen ondersteuning voor het verbinden met WEP beveiliging."
+msgid "<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not currently support connecting to WEP"
+msgstr "<strong>Opmerking</strong> WEP beveiligde toegangspunten worden als 'Open' getoond. SecureWall heeft geen ondersteuning voor het verbinden met WEP beveiliging."
 
 #: includes/dashboard.php
 msgid "Interface Information"

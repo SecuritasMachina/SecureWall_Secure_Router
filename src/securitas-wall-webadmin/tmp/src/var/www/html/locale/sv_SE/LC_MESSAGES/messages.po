@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
+# SecureWall Portable Object file
 # Project home: https://github.com/billz/raspap-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 #
 #, fuzzy
@@ -19,14 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "RaspAP Wifi Konfigurationsportal"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "SecureWall Wifi Konfigurationsportal"
 
 msgid "Toggle navigation"
 msgstr "Växla meny"
 
-msgid "RaspAP Wifi Portal"
-msgstr "RaspAP Wifi Portal"
+msgid "SecureWall Wifi Portal"
+msgstr "SecureWall Wifi Portal"
 
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -58,8 +58,8 @@ msgstr "Byt Tema"
 msgid "System"
 msgstr "System"
 
-msgid "About RaspAP"
-msgstr "Om RaspAP"
+msgid "About SecureWall"
+msgstr "Om SecureWall"
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -141,8 +141,8 @@ msgstr "Dölj"
 msgid "Not configured"
 msgstr "Inte konfigurerad"
 
-msgid "<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not currently support connecting to WEP"
-msgstr "<strong>Notera:</strong> WEP åtkomstpunkter visas som 'Öppna'. RaspAP stödjer närvarande inte anslutning till WEP"
+msgid "<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not currently support connecting to WEP"
+msgstr "<strong>Notera:</strong> WEP åtkomstpunkter visas som 'Öppna'. SecureWall stödjer närvarande inte anslutning till WEP"
 
 #: includes/dashboard.php
 msgid "Interface Information"

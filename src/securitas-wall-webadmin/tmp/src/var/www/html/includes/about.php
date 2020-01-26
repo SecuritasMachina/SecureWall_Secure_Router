@@ -2,7 +2,7 @@
 
 /**
  *
- * Displays info about the RaspAP project
+ * Displays info about the SecureWall project
  *
  */
 function DisplayAbout()

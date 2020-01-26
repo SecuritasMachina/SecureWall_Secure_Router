@@ -1,6 +1,6 @@
 {
-    "name": "RaspAP",
-    "short_name": "RaspAP",
+    "name": "SecureWall",
+    "short_name": "SecureWall",
     "icons": [
         {
             "src": "/dist/icons/android-chrome-192x192.png",

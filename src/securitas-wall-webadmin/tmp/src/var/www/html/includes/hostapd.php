@@ -272,14 +272,14 @@ function SaveHostAPDConfig($wpa_array, $enc_types, $modes, $interfaces, $status)
             // Enable uap0 configuration in dhcpcd for Wifi client AP mode
             $intConfig = parse_ini_file(RASPI_CONFIG_NETWORKING.'/uap0.ini', false, INI_SCANNER_RAW);
             $ip_address = ($intConfig['ip_address'] == '') ? '192.168.50.1/24' : $intConfig['ip_address'];
-            $config = PHP_EOL.'# RaspAP uap0 configuration'.PHP_EOL;
+            $config = PHP_EOL.'# SecureWall uap0 configuration'.PHP_EOL;
             $config.= 'interface uap0'.PHP_EOL;
             $config.= 'static ip_address='.$ip_address.PHP_EOL;
             $config.= 'nohook wpa_supplicant'.PHP_EOL;
         } else {
             // Default config
             $ip_address = ($intConfig['ip_address'] == '') ? '10.3.141.1/24' : $intConfig['ip_address'];
-            $config = '# RaspAP wlan0 configuration'.PHP_EOL;
+            $config = '# SecureWall wlan0 configuration'.PHP_EOL;
             $config.= 'hostname'.PHP_EOL;
             $config.= 'clientid'.PHP_EOL;
             $config.= 'persistent'.PHP_EOL;

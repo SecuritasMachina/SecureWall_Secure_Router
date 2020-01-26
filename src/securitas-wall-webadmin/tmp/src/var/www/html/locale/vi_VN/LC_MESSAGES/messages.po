@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
+# SecureWall Portable Object file
 # Project home: https://github.com/billz/raspap-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 # 
 # Translators:
@@ -23,14 +23,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "Cổng thông tin Cấu hình Wifi RaspAP"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "Cổng thông tin Cấu hình Wifi SecureWall"
 
 msgid "Toggle navigation"
 msgstr "Chuyển đổi điều hướng"
 
-msgid "RaspAP Wifi Portal"
-msgstr "Cổng thông tin wifi RaspAP"
+msgid "SecureWall Wifi Portal"
+msgstr "Cổng thông tin wifi SecureWall"
 
 msgid "Dashboard"
 msgstr "Bảng điều khiển"
@@ -62,8 +62,8 @@ msgstr "Thay đổi Chủ đề"
 msgid "System"
 msgstr "Hệ thống"
 
-msgid "About RaspAP"
-msgstr "Về RaspAP"
+msgid "About SecureWall"
+msgstr "Về SecureWall"
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -150,10 +150,10 @@ msgid "Not configured"
 msgstr "Không được cấu hình"
 
 msgid ""
-"<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not "
+"<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not "
 "currently support connecting to WEP"
 msgstr ""
-"<strong>Lưu ý:</strong> Các điểm truy cập WEP đang có dạng \"Mở\". RaspAP "
+"<strong>Lưu ý:</strong> Các điểm truy cập WEP đang có dạng \"Mở\". SecureWall "
 "hiện không hỗ trợ kết nối tới WEP."
 
 #: includes/dashboard.php
