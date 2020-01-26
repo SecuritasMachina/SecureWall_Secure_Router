@@ -81,15 +81,29 @@ cd squidclamav-7.1
 ./configure --with-c-icap=/usr/include/c_icap
 make
 make install
-#libtool --finish /usr/lib/arm-linux-gnueabinf/c_icap/
+
 libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
+echo "Configure lighttpd"
+systemctl stop lighttpd.service
+systemctl start lighttpd.service
+systemctl enable lighttpd.service
+lighttpd-enable-mod fastcgi
+lighttpd-enable-mod fastcgi-php
+service lighttpd restart
 
- 
+#Mimic RaspAP Config
+mkdir -p /etc/raspap
+cp /var/www/html/raspap.php /etc/raspap
+
+
 echo "Apply permissions"
 chmod o+x /etc/cron.weekly/*
 chmod o+x /etc/cron.daily/*
 chmod o+x /etc/cron.hourly/*
+chown -R www-data /etc/raspap
+chown -R www-data:www-data /var/www
+
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
