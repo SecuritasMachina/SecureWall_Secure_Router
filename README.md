@@ -24,3 +24,5 @@ Web filtering to prevent engagement with websites and social networking blogs.
 * Leverages a vast, continuously-updated database of known malicious web sites, MalWare & RansomWare
 * Content inspection utilizing ClamAV AntiVirus 
 
+### WebAdmin
+* Navigate to port 80 of your SecureWall AP, use user: admin password: secret
