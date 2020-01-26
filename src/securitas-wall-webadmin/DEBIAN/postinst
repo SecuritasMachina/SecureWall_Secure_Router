@@ -41,8 +41,10 @@ cp /var/www/html/raspap.php /etc/raspap
 echo "Apply permissions"
 chown -R www-data /etc/raspap
 chown -R www-data:www-data /var/www
-
-#Harden
+if cat /etc/sudoers | grep "configauth" ; then
+     echo "/etc/sudoers entries exist"
+else
+     echo "Adding /etc/sudoers entries"
 tee -a /etc/sudoers << END
 www-data ALL=(ALL) NOPASSWD:/sbin/ifdown
 www-data ALL=(ALL) NOPASSWD:/sbin/ifup
@@ -77,6 +79,8 @@ www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/servicestart.sh
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/lighttpd/configport.sh
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/openvpn/configauth.sh
 END
+
+fi
 
 echo "Cleanup"
 rm -rf /tmp/src
