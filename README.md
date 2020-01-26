@@ -25,4 +25,5 @@ Web filtering to prevent engagement with websites and social networking blogs.
 * Content inspection utilizing ClamAV AntiVirus 
 
 ### WebAdmin
-* Navigate to port 80 of your SecureWall AP, use user: admin password: secret
+* Navigate to port 80 of your SecureWall AP http://securewall-?? where ?? is randomally assigned characters shown at install time
+* Use user: admin password: secret
