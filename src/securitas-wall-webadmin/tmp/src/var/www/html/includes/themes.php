@@ -6,7 +6,7 @@
 function DisplayThemeConfig()
 {
     $themes = [
-        "default"    => "RaspAP (default)",
+        "default"    => "SecureWall (default)",
         "hackernews" => "HackerNews",
         "terminal"   => "Terminal"
     ];
