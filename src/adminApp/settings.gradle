@@ -1,4 +1,0 @@
-include ':lib'
-rootProject.name = 'DataDictionary'
-include   ':JavaCommon'
-project(':JavaCommon').projectDir = new File(settingsDir, '../javaCommon')
