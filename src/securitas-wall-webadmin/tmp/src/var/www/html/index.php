@@ -25,7 +25,7 @@ include_once(RASPI_CONFIG.'/raspap.php');
 include_once('includes/locale.php');
 include_once('includes/functions.php');
 include_once('includes/dashboard.php');
-#include_once('includes/authenticate.php');
+include_once('includes/authenticate.php');
 include_once('includes/admin.php');
 include_once('includes/dhcp.php');
 include_once('includes/hostapd.php');
