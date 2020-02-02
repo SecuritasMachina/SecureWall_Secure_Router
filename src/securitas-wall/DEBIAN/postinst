@@ -73,8 +73,8 @@ chown -R proxy:proxy /var/log/squidguard
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
-chmod ug+rwx /var/log/squid
-chmod ug+rwx /var/log/squidguard
+chmod ug+rwxt /var/log/squid
+chmod ug+rwxt /var/log/squidguard
 chmod ug+rw /var/log/squid/*
 chmod ug+rw /var/log/squidguard/*
 chmod ug+rw /var/ssl_db/*
