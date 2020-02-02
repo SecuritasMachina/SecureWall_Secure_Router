@@ -65,18 +65,24 @@ cp -r /tmp/src/etc/c-icap/* /etc/c-icap
 
  
 echo "Apply permissions"
-chmod o+x /etc/cron.weekly/*
-chmod o+x /etc/cron.daily/*
-chmod o+x /etc/cron.hourly/*
+chmod ug+x /etc/cron.weekly/*
+chmod ug+x /etc/cron.daily/*
+chmod ug+x /etc/cron.hourly/*
+chown -R proxy:proxy /var/log/squid
+chown -R proxy:proxy /var/log/squidguard
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
-chmod go+rw /var/ssl_db/*
-chmod go+rw /etc/squid/ssl_cert/*
-chmod go+rw /var/log/squid/*
+chmod ug+rwx /var/log/squid
+chmod ug+rwx /var/log/squidguard
+chmod ug+rw /var/log/squid/*
+chmod ug+rw /var/log/squidguard/*
+chmod ug+rw /var/ssl_db/*
+chmod ug+rw /etc/squid/ssl_cert/*
+chmod ug+rw /var/log/squid/*
 chmod a+r /etc/issue
 #Harden
-chmod go-r /etc/squid/squid.conf
+chmod ug-r /etc/squid/squid.conf
 
 echo "Cleanup"
 rm -rf /tmp/src
