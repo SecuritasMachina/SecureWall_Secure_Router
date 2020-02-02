@@ -117,11 +117,11 @@ echo "Tighten security"
 
 chmod a+x /usr/local/bin/*
 chmod ug+x /usr/local/sbin/*
+
 chmod ug+x /etc/cron.hourly/*
 chmod ug+x /etc/cron.daily/*
 chmod ug+x /etc/cron.weekly/*
-chmod ug+x /etc/cron.daily/*
-chmod ug+x /etc/cron.hourly/*
+
 chmod a+r /etc/issue
 chown bind.bind /etc/bind/named.conf.options
 touch /var/log/querylog
