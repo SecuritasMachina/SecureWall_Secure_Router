@@ -24,8 +24,8 @@ rm -f /tmp/securitasmachina.tgz
 /etc/cron.weekly/get-easylist.sh squidGuard autoconfirm
 #echo "Reload squidGuard"
 #sudo -u proxy squidGuard -C all
-
+chmod ug+rwx /var/log/squidguard
 echo "Reload squid"
-
+#service squid start
 squid -k reconfigure
 
