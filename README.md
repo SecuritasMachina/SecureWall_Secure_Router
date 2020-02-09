@@ -14,6 +14,8 @@ Minimum System Requirements:
 - 16GB Disk Space
 - Bionic or Buster
 
+DIY Available at on https://hackaday.io/project/168444-secure-wifi-router-prevents-malware-viruses & https://www.instructables.com/id/Secure-WIFI-Router-Malware-and-Ransomware-Protecti/
+
 ### Privacy Protection
 Ad blocking and Ad filtering to remove online advertising in your web browser.
 
@@ -27,3 +29,4 @@ Web filtering to prevent engagement with websites and social networking blogs.
 ### WebAdmin
 * Navigate to port 80 of your SecureWall AP http://securewall-?? where ?? is randomally assigned characters shown at install time
 * Use user: admin password: secret
+

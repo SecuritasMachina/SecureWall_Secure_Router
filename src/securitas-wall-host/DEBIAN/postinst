@@ -115,14 +115,13 @@ echo "Tighten security"
 #passwd -l $CONTAINER_USER
 #chsh -s /bin/false $CONTAINER_USER
 
-#usermod -a -G sudo securitas
 chmod a+x /usr/local/bin/*
 chmod ug+x /usr/local/sbin/*
-chmod o+x /etc/cron.hourly/*
-chmod o+x /etc/cron.daily/*
-chmod o+x /etc/cron.weekly/*
-chmod o+x /etc/cron.daily/*
-chmod o+x /etc/cron.hourly/*
+
+chmod ug+x /etc/cron.hourly/*
+chmod ug+x /etc/cron.daily/*
+chmod ug+x /etc/cron.weekly/*
+
 chmod a+r /etc/issue
 chown bind.bind /etc/bind/named.conf.options
 touch /var/log/querylog
@@ -132,8 +131,6 @@ chown bind.bind /var/log/querylog
 
 echo "TODO Restarting system"
 
-#TODO
-#Routine to find init line and replace via java
 #cron Malware sigs
 #Get malware clamav sigs
 #Work on admin interface
