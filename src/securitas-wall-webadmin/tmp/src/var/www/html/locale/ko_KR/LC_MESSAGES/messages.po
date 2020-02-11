@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
+# SecureWall Portable Object file
 # Project home: https://github.com/billz/raspap-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 # 
 # Translators:
@@ -23,14 +23,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "RaspAP WiFi 환경설정 포탈"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "SecureWall WiFi 환경설정 포탈"
 
 msgid "Toggle navigation"
 msgstr "토글 내비게이션"
 
-msgid "RaspAP Wifi Portal"
-msgstr "RaspAP WiFi 포탈"
+msgid "SecureWall Wifi Portal"
+msgstr "SecureWall WiFi 포탈"
 
 msgid "Dashboard"
 msgstr "대시보드 "
@@ -62,8 +62,8 @@ msgstr "테마 변경 "
 msgid "System"
 msgstr "시스템"
 
-msgid "About RaspAP"
-msgstr "RaspAP 소개 "
+msgid "About SecureWall"
+msgstr "SecureWall 소개 "
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -148,7 +148,7 @@ msgid "Not configured"
 msgstr "환결설정 안됨"
 
 msgid ""
-"<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not "
+"<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not "
 "currently support connecting to WEP"
 msgstr ""
 "<strong>주의:</strong> WEP 접근점은 'Open'으로 표시됩니다. RaspAP은 현재 WEP 연결을 지원하지 않습니다"

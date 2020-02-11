@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
+# SecureWall Portable Object file
 # Project home: https://github.com/billz/raspap-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 #
 #, fuzzy
@@ -19,14 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "RaspAP Wifi konfigurointiportaali"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "SecureWall Wifi konfigurointiportaali"
 
 msgid "Toggle navigation"
 msgstr "Navigointi päällä/pois"
 
-msgid "RaspAP Wifi Portal"
-msgstr "RaspAP Wifi portaali"
+msgid "SecureWall Wifi Portal"
+msgstr "SecureWall Wifi portaali"
 
 msgid "Dashboard"
 msgstr "Ohjauspaneeli"
@@ -58,8 +58,8 @@ msgstr "Vaihda teema"
 msgid "System"
 msgstr "Järjestelmä"
 
-msgid "About RaspAP"
-msgstr "RaspAP tiedot"
+msgid "About SecureWall"
+msgstr "SecureWall tiedot"
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -141,8 +141,8 @@ msgstr "Piilota"
 msgid "Not configured"
 msgstr "Ei määritelty"
 
-msgid "<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not currently support connecting to WEP"
-msgstr "<strong>Huom:</strong> WEP yhteyspisteet näkyvät 'Avoimena' mutta RaspAP ei nyt tue WEP yhteyksiä."
+msgid "<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not currently support connecting to WEP"
+msgstr "<strong>Huom:</strong> WEP yhteyspisteet näkyvät 'Avoimena' mutta SecureWall ei nyt tue WEP yhteyksiä."
 
 #: includes/dashboard.php
 msgid "Interface Information"

@@ -1,7 +1,7 @@
-# RaspAP Portable Object file
-# Project home: https://github.com/billz/raspap-webgui
+# SecureWall Portable Object file
+# Project home: https://github.com/billz/SecureWall-webgui
 # Licensed under the GNU General Public License v3.0
-# This file is distributed under the same license as the RaspAP package
+# This file is distributed under the same license as the SecureWall package
 # FIRST AUTHOR billzimmerman@gmail.com, 2017
 #
 #, fuzzy
@@ -19,14 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: index.php
-msgid "RaspAP Wifi Configuration Portal"
-msgstr "RaspAP WLAN Konfiguration Portal"
+msgid "SecureWall Wifi Configuration Portal"
+msgstr "SecureWall WLAN Konfiguration Portal"
 
 msgid "Toggle navigation"
 msgstr "Navigation umschalten"
 
-msgid "RaspAP Wifi Portal"
-msgstr "RaspAP WLAN Portal"
+msgid "SecureWall Wifi Portal"
+msgstr "SecureWall WLAN Portal"
 
 msgid "Dashboard"
 msgstr "Übersicht"
@@ -58,8 +58,8 @@ msgstr "Oberflächendesign ändern"
 msgid "System"
 msgstr "System"
 
-msgid "About RaspAP"
-msgstr "Über RaspAP"
+msgid "About SecureWall"
+msgstr "Über SecureWall"
 
 #: includes/admin.php
 msgid "Authentication settings"
@@ -141,8 +141,8 @@ msgstr "Ausblenden"
 msgid "Not configured"
 msgstr "Nicht konfiguriert"
 
-msgid "<strong>Note:</strong> WEP access points appear as 'Open'. RaspAP does not currently support connecting to WEP"
-msgstr "<strong>Hinweis:</strong> WEP access points erscheinen als 'Offen'. RaspAP unterstützt derzeit keine Verbindungen zu WEP"
+msgid "<strong>Note:</strong> WEP access points appear as 'Open'. SecureWall does not currently support connecting to WEP"
+msgstr "<strong>Hinweis:</strong> WEP access points erscheinen als 'Offen'. SecureWall unterstützt derzeit keine Verbindungen zu WEP"
 
 #: includes/dashboard.php
 msgid "Interface Information"
