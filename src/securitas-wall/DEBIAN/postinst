@@ -44,26 +44,29 @@ if (( aMem < 1999000 )); then
 	rm -rf /var/lib/squidguard/db/blacklists/warez/*
 fi
 echo "Generate squidguard databases"
-
 /etc/cron.weekly/updateSquidGuard.sh
-
-#sudo -u proxy squidGuard -C all
 
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
 
-echo "Install Squidclam Antivirus"
+echo "Build & install Squidclam Antivirus"
 cd /tmp
-tar -xzf /tmp/include/squidclamav-7.1.tar.gz
-cd squidclamav-7.1
+git clone https://github.com/SecuritasMachina/squidclamav
+cd squidclamav
 ./configure --with-c-icap=/usr/include/c_icap
 make
 make install
-#libtool --finish /usr/lib/arm-linux-gnueabinf/c_icap/
-libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
+if ((1<<32)); then
+  	echo 64bits
+  	libtool --finish /usr/lib/x86_64-linux-gnu/c_icap/
+else
+  	echo 32bits
+	libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
+fi
+
+echo "Copy c-icap config"
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
 
- 
 echo "Apply permissions"
 chmod ug+x /etc/cron.weekly/*
 chmod ug+x /etc/cron.daily/*
