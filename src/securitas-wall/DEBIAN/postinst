@@ -89,4 +89,3 @@ chmod ug-r /etc/squid/squid.conf
 
 echo "Cleanup"
 rm -rf /tmp/src
-
