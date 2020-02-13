@@ -24,10 +24,13 @@ chown -R proxy:proxy /var/lib/squidguard/db/*
 
 rm -f /tmp/mesd_blacklists.tgz
 rm -f /tmp/securitasmachina.tgz
+
 /etc/cron.daily/get-easylist.sh squidGuard autoconfirm
 #echo "Reload squidGuard"
 #sudo -u proxy squidGuard -C all
-chmod ug+rwx /var/log/squidguard
+chown -R proxy:proxy /var/log/squidguard
+chmod ug+rwxt /var/log/squidguard
+
 echo "Reload squid"
 #service squid start
 squid -k reconfigure
