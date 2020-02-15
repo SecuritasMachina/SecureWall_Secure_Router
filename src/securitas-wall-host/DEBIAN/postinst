@@ -35,7 +35,7 @@ modprobe ip_conntrack
 #cd /usr/src/rtl8812au-5.1.5
 #./dkms-install.sh
 
-echo "Copy template files"
+echo "Copy Skeleton"
 cp -ru /tmp/src/* /
 
 echo "Add iptables rules"
@@ -54,7 +54,6 @@ else
     echo "#wifi_random_added" >>/etc/hostapd/hostapd.conf
 
 fi
-
 
 echo "Disable dhcpcd for bridge"
 

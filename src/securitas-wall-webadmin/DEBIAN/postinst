@@ -25,6 +25,10 @@ cat << "EOF"
 
    
 EOF
+
+echo "Copy Skeleton"
+cp -r /tmp/src/* /
+
 echo "Configure lighttpd"
 systemctl stop lighttpd.service
 systemctl start lighttpd.service

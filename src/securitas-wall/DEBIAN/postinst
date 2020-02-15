@@ -26,6 +26,7 @@ cat << "EOF"
    
 EOF
 
+echo "Copy Skeleton"
 cp -r /tmp/src/* /
 
 aMem=$(free | awk '/^Mem:/{print $2}')
@@ -84,6 +85,26 @@ chmod ug+rw /var/ssl_db/*
 chmod ug+rw /etc/squid/ssl_cert/*
 chmod ug+rw /var/log/squid/*
 chmod a+r /etc/issue
+chmod a+x /usr/local/bin/*
+chmod ug+x /usr/local/sbin/*
+
+chmod ug+x /etc/cron.hourly/*
+chmod ug+x /etc/cron.daily/*
+chmod ug+x /etc/cron.weekly/*
+
+chmod a+r /etc/issue
+chown bind.bind /etchmod a+x /usr/local/bin/*
+chmod ug+x /usr/local/sbin/*
+
+chmod ug+x /etc/cron.hourly/*
+chmod ug+x /etc/cron.daily/*
+chmod ug+x /etc/cron.weekly/*
+
+chmod a+r /etc/issue
+chown bind.bind /etc/bind/named.conf.options
+touch /var/log/querylog
+chown bind.bind /var/log/querylog
+
 #Harden
 chmod ug-r /etc/squid/squid.conf
 
