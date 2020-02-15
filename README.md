@@ -36,4 +36,4 @@ Web filtering to prevent engagement with websites and social networking blogs.
 
 NTOP Navigate to port 3000 of your SecureWall AP http://securewall-??:3000 where ?? is randomally assigned characters shown at install time
 
-![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/images/Screen%20Shot%202020-02-15%20at%2010.19.21%20AM.png  "Open Source End Point Protection")
+![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/images/Screen%20Shot%202020-02-15%20at%2011.39.10%20AM.png  "Open Source End Point Protection")
