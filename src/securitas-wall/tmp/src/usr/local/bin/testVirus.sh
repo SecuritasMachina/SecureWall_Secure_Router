@@ -71,7 +71,7 @@ step= "Testing Virus Malware groups"
 while read NAME
 do
     step "Testing $NAME"
-    value = "http://securitasmachina.com/sampleViruses/$NAME"
+    value = "http://securitasmachina.com/sampleViruses/Malz/$NAME"
     if curl -s -k --proxy $proxy $value | grep -i "block"
 	then
 		step= "Success - Blocked virus @ $value"
