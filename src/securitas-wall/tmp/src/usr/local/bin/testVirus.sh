@@ -13,11 +13,7 @@ testVirus(){
                 echo "Fail $2"
         fi
 }
-declare -a StringArray=("$httpWebSite" "$httpsWebSite")
-# Read the array values with space
-for val in "${StringArray[@]}"; do
-	testVirus $val $val &
-done
+
 declare -a StringArray=("http://www.eicar.org/download/eicar.com" \
 "https://secure.eicar.org/eicar.com" \
 "https://secure.eicar.org/eicar_com.zip" \
