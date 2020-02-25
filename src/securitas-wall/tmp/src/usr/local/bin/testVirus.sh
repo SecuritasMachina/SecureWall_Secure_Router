@@ -1,9 +1,11 @@
-set -x
+#set -x
 
-proxy="http://localhost:3128"
+proxy="http://localhost:13081"
+http_proxy=$proxy
 httpWebSite="http://securitasMachina.com"
 httpsWebSite="https://securitasMachina.com"
-
+results=""
+step1="none"
 # Declare a string array with type
 declare -a StringArray=("$httpWebSite" \
 "$httpsWebSite")
@@ -12,9 +14,9 @@ declare -a StringArray=("$httpWebSite" \
 for val in "${StringArray[@]}"; do
 	if curl -s -k --proxy $proxy $val | grep -i "ProxyTest1979"
 	then
-		step= "Success $val"
+		results="$results Success $val\n"
 	else
-		step= "Fail $val !"
+		results="$results Fail $val\n"
 	fi
 done
 
@@ -29,29 +31,25 @@ declare -a StringArray=("http://www.eicar.org/download/eicar.com" \
  
 # Read the array values with space
 for val in "${StringArray[@]}"; do
-	if curl -s -k --proxy $proxy $val | grep -i "block"
+	if wget -qO- $val | grep -i "Blocked"
 	then
-		step= "Success - Blocked virus!"
+		results="$results Success $val\n"
 	else
-		step= "Fail!"
+		results="$results Fail $val\n"
 	fi
 done
 
-step= "Testing Virus Malware groups"
+echo "Testing Virus Malware groups"
 while read NAME
 do
-    step "Testing $NAME"
-    value = "http://securitasmachina.com/sampleViruses/Malz/$NAME"
-    if curl -s -k --proxy $proxy $value | grep -i "block"
+    value1="http://securitasmachina.com/sampleViruses/Malz/$NAME"
+
+    if wget -qO- $value1 | grep -i "Blocked"
 	then
-		step= "Success - Blocked virus @ $value"
+		results="$results Success $NAME\n"
 	else
-		step= "Fail! @ $value"
+		results="$results Fail $NAME\n"
 	fi
-done < virusNames.lst
+done < /usr/local/bin/virusNames.lst
 
-#https://wildfire.paloaltonetworks.com/publicapi/test/pe
-
-
-
-
+echo -e $results
