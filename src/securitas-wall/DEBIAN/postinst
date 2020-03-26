@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 cat << "EOF"
                              ;\ 
                             |' \ 
@@ -57,12 +57,13 @@ cd squidclamav
 ./configure --with-c-icap=/usr/include/c_icap
 make
 make install
-if ((1<<32)); then
-  	echo 64bits
-  	libtool --finish /usr/lib/x86_64-linux-gnu/c_icap/
+MACHINE_TYPE='uname -m'
+if [ $(uname -m) == 'x86_64' ]; then
+  # 64-bit stuff here
+  libtool --finish /usr/lib/x86_64-linux-gnu/c_icap/
 else
-  	echo 32bits
-	libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
+  # 32-bit stuff here
+  libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
 fi
 
 echo "Copy c-icap config"
