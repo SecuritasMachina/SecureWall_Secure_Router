@@ -1,5 +1,8 @@
 # Secure WiFi Router, Prevents Malware, Viruses, Ransomware & Advertisements from touching your devices and helps preserve your privacy
 
+### Created by
+Charles Havranek who has been an Ethical white hat hacker for 20 years and counting.  Also responsible for securing systems in the financial and government worlds.
+
 # [Wiki - Installation](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
 
 
@@ -38,3 +41,4 @@ Web filtering to prevent engagement with websites and social networking blogs.
 * To use ntopng Community/Embedded Edition, navigate to port 3000 of your SecureWall AP http://securewall-??:3000 where ?? is randomly assigned characters shown at install time
 
 ![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/images/Screen%20Shot%202020-02-15%20at%2011.39.10%20AM.png  "Open Source End Point Protection")
+
