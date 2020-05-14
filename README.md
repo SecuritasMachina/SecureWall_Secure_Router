@@ -1,4 +1,4 @@
-# Secure WiFi Router, Prevents Malware, Viruses & Ransomware from touching your devices
+# Secure WiFi Router, Prevents Malware, Viruses, Ransomware & Advertisements from touching your devices and helps preserve your privacy
 
 # [Wiki - Installation](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
 
