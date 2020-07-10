@@ -3,6 +3,8 @@
 ### Created by
 Charles Havranek who has been an Ethical white hat hacker for 20 years and counting.  Also responsible for securing systems in the financial and government worlds.
 
+### Note docker container is in development and requires configuration documentation.  The RaspberryPI solution is plug and play and works well!
+
 # [Wiki - Installation](https://github.com/SecuritasMachina/SecureWall_Secure_Router/wiki)
 
 
