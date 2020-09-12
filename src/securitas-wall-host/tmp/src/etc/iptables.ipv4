@@ -25,6 +25,7 @@ COMMIT
 :OUTPUT ACCEPT [0:0]
 -A INPUT -i lo -j ACCEPT
 -A INPUT -i br0 -j ACCEPT
+-A INPUT -i eth0 -j ACCEPT
 -A INPUT -i wlan0 -p tcp -m tcp --dport 13080 -m state --state NEW,ESTABLISHED -j ACCEPT
 -A INPUT -i wlan0 -p tcp -m tcp --dport 13443 -m state --state NEW,ESTABLISHED -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 -m physdev --physdev-in wlan0 -j ACCEPT
