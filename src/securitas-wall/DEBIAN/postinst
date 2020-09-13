@@ -28,23 +28,8 @@ EOF
 
 cp -r /tmp/src/* /
 
-aMem=$(free | awk '/^Mem:/{print $2}')
-if (( aMem < 1999000 )); then
-	echo "Less than 2GB memory on device, reducing squid guard checks"
-	cp /tmp/src/etc/squidguard/squidGuard-light.conf /etc/squidguard/squidGuard.conf
-	rm -rf /var/lib/squidguard/db/blacklists/ads/*
-	rm -rf /var/lib/squidguard/db/blacklists/aggressive/*
-	rm -rf /var/lib/squidguard/db/blacklists/audio-video/*
-	rm -rf /var/lib/squidguard/db/blacklists/drugs/*
-	rm -rf /var/lib/squidguard/db/blacklists/gambling/*
-	rm -rf /var/lib/squidguard/db/blacklists/hacking/*
-	rm -rf /var/lib/squidguard/db/blacklists/mail/*
-	rm -rf /var/lib/squidguard/db/blacklists/spyware/*
-	rm -rf /var/lib/squidguard/db/blacklists/suspect/*
-	rm -rf /var/lib/squidguard/db/blacklists/warez/*
-fi
 echo "Generate squidguard databases"
-/etc/cron.weekly/updateSquidGuard.sh
+/etc/cron.daily/updateSquidGuard.sh
 
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
@@ -71,11 +56,13 @@ echo "Apply permissions"
 chmod ug+x /etc/cron.weekly/*
 chmod ug+x /etc/cron.daily/*
 chmod ug+x /etc/cron.hourly/*
+
 chown -R proxy:proxy /var/log/squid
 chown -R proxy:proxy /var/log/squidguard
 chown -R proxy:proxy /var/ssl_db
 chown -R proxy:proxy /var/lib/squid
 chown -R proxy:proxy /etc/squid/ssl_cert
+
 chmod ug+rwxt /var/log/squid
 chmod ug+rwxt /var/log/squidguard
 chmod ug+rw /var/log/squid/*
