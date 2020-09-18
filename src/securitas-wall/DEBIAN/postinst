@@ -29,7 +29,7 @@ EOF
 cp -r /tmp/src/* /
 
 echo "Generate squidguard databases"
-/etc/cron.daily/updateSquidGuard.sh
+/etc/cron.daily/updateSquidGuard
 
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
