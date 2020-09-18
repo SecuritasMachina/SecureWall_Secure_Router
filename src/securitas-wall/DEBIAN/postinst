@@ -28,9 +28,6 @@ EOF
 
 cp -r /tmp/src/* /
 
-echo "Generate squidguard databases"
-#/etc/cron.daily/updateSquidGuard
-
 echo "Generate Squid certificates"
 /usr/lib/squid/security_file_certgen -c -s /var/ssl_db -M 4mb
 
@@ -41,13 +38,13 @@ cd squidclamav
 ./configure --with-c-icap=/usr/include/c_icap
 make
 make install
-if ((1<<32)); then
-  	echo 64bits
-  	libtool --finish /usr/lib/x86_64-linux-gnu/c_icap/
-else
-  	echo 32bits
+#if ((1<<32)); then
+#  	echo 64bits
+#  	libtool --finish /usr/lib/x86_64-linux-gnu/c_icap/
+#else
+#  	echo 32bits
 	libtool --finish /usr/lib/arm-linux-gnueabihf/c_icap/
-fi
+#fi
 
 echo "Copy c-icap config"
 cp -r /tmp/src/etc/c-icap/* /etc/c-icap
