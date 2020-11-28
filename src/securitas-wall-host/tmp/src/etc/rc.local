@@ -1,0 +1,4 @@
+systemctl daemon-reload
+/etc/init.d/clamav-daemon  restart
+
+exit 0
