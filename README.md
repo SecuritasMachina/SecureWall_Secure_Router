@@ -34,6 +34,7 @@ Web filtering to prevent engagement with websites and social networking blogs.
 ### WebAdmin
 * Navigate to port 80 of your SecureWall AP http://securewall-?? where ?? is randomly assigned characters shown at install time
 * Use user: admin password: secret
+* ⚠️ These are **first-boot defaults** — change the admin password immediately after install.
 ![alt text](https://github.com/SecuritasMachina/SecureWall_Secure_Router/blob/master/images/Screen%20Shot%202020-02-15%20at%2010.21.53%20AM.png  "Open Source End Point Protection")
 
 
